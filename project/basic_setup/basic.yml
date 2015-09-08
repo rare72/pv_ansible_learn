@@ -1,0 +1,13 @@
+# basic.yml
+---
+- hosts: nodes
+
+  vars:
+    dynamicpv_1: This should work
+  vars_prompt:
+    - name: dynamicpv_2
+      prompt: "Enter a value"
+      default: "{{ test_var1 }}"
+      register: dynamicpvOutput
+  tasks:
+    - debug: msg="This Should Work {{ dynamicpvOutput.stdout }}"
