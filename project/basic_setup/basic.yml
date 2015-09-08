@@ -1,13 +1,23 @@
 # basic.yml
 ---
-- hosts: nodes
+- hosts: all
+  connection: local
 
   vars:
     dynamicpv_1: This should work
+    register: dynamicpvOutput_1
+
   vars_prompt:
     - name: dynamicpv_2
       prompt: "Enter a value"
-      default: "{{ test_var1 }}"
-      register: dynamicpvOutput
+      private: no
+      register: dynamicpvOutput_2
   tasks:
-    - debug: msg="This Should Work {{ dynamicpvOutput.stdout }}"
+   - debug: msg="This Should Work, Why? {{ dynamicpv_2 }} Thats Why."
+     ignore_errors: yes
+
+   - debug: var=dynamicpv_1
+     ignore_errors: yes
+
+   - debug: var=dynamicpv_2
+     ignore_errors: yes
