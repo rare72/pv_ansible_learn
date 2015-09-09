@@ -4,10 +4,12 @@ Pre-Req:
 VMWARE Workstation
 
 Tasks to do:
-Install open-vm-toolbox
-install open-vm-toolbox-desktop
-install python-pip
-install ansible
-remove package unity-webapps-common
-
-
+- install synaptic
+- install open-vm-toolbox
+- install open-vm-toolbox-desktop
+- install python-pip
+- install ansible
+- remove package unity-webapps-common
+- install package libxml2-dev libxslt-dev libyaml-dev libffi-dev python-virtualenv python-pip python-dev libz-dev libssl-dev
+- install gcc make
+- remove package unity-webapps-common unity-scope-gdrive unity-lens-music unity-lens-photos unity-lens-video 
