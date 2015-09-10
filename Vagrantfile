@@ -23,18 +23,6 @@ cluster.vm.define "ansible-node" do |config|
   config.vm.network :private_network, ip: "10.42.0.101"
 end
 
-cluster.vm.define "ansible-node" do |config|
-  config.vm.box = "bento/centos-7.1"
-  config.ssh.insert_key = false
-  config.ssh.forward_agent = true
-  config.vm.provider :virtualbox do |vb, override|
-    vb.customize ["modifyvm", :id, "--memory", "768"]
-    vb.customize ["modifyvm", :id, "--cpus", "1"]
-  end
-  config.vm.hostname = "ansible-node-d"
-  config.vm.network :private_network, ip: "10.42.0.102"
-end
-
 cluster.vm.define "node-1" do |config|
   config.vm.box = "bento/centos-6.7"
   config.ssh.insert_key = false
@@ -66,6 +54,28 @@ cluster.vm.define "node-3" do |config|
   end
   config.vm.hostname = "node-3"
   config.vm.network :private_network, ip: "10.42.0.8"
+end
+
+cluster.vm.define "node-4" do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.ssh.insert_key = false
+  config.vm.provider :virtualbox do |vb, override|
+    vb.customize ["modifyvm", :id, "--memory", "512"]
+    vb.customize ["modifyvm", :id, "--cpus", "1"]
+  end
+  config.vm.hostname = "node-4"
+  config.vm.network :private_network, ip: "10.42.0.9"
+end
+
+cluster.vm.define "node-5" do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.ssh.insert_key = false
+  config.vm.provider :virtualbox do |vb, override|
+    vb.customize ["modifyvm", :id, "--memory", "512"]
+    vb.customize ["modifyvm", :id, "--cpus", "1"]
+  end
+  config.vm.hostname = "node-5"
+  config.vm.network :private_network, ip: "10.42.0.10"
 end
 
 cluster.vm.define "haproxy" do |config|
