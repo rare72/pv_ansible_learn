@@ -4,16 +4,16 @@
   connection: local
 
   vars:
-    dynamicpv_1: This should work
+    dynamicpv_1: This should work.
     register: dynamicpvOutput_1
 
   vars_prompt:
     - name: dynamicpv_2
       prompt: "Enter a value"
-      private: no
+      private: yes
       register: dynamicpvOutput_2
   tasks:
-   - debug: msg="This Should Work, Why? {{ dynamicpv_2 }} Thats Why."
+   - debug: msg="{{ dynamicpv_1 }}. {{ dynamicpv_2 }} . Yes It Works!!!"
      ignore_errors: yes
 
    - debug: var=dynamicpv_1
