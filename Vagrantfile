@@ -20,11 +20,11 @@ cluster.vm.define "ansible-node" do |config|
     vb.customize ["modifyvm", :id, "--cpus", "2"]
   end
   config.vm.hostname = "ansible-node"
-  config.vm.network :private_network, ip: "10.42.0.10"
+  config.vm.network :private_network, ip: "10.42.0.101"
 end
 
 cluster.vm.define "ansible-node" do |config|
-  config.vm.box = "chef/centos-7.1"
+  config.vm.box = "bento/centos-7.1"
   config.ssh.insert_key = false
   config.ssh.forward_agent = true
   config.vm.provider :virtualbox do |vb, override|
@@ -32,7 +32,7 @@ cluster.vm.define "ansible-node" do |config|
     vb.customize ["modifyvm", :id, "--cpus", "1"]
   end
   config.vm.hostname = "ansible-node-d"
-  config.vm.network :private_network, ip: "10.42.0.2"
+  config.vm.network :private_network, ip: "10.42.0.102"
 end
 
 cluster.vm.define "node-1" do |config|
@@ -80,13 +80,13 @@ cluster.vm.define "haproxy" do |config|
 end
 
 cluster.vm.define "tower" do |config|
-  config.vm.box = "chef/centos-6.5"
+  config.vm.box = "bento/centos-6.5"
   config.ssh.insert_key = false
   config.vm.provider :virtualbox do |vb, override|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
     vb.customize ["modifyvm", :id, "--cpus", "2"]
   end
   config.vm.hostname = "tower"
-  config.vm.network :private_network, ip: "10.42.0.200"
+  config.vm.network :private_network, ip: "10.42.0.103"
 end
 end
