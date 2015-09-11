@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |cluster|
   # Every Vagrant virtual environment requires a box to build off of.
 
 cluster.vm.define "ansible-node" do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "bento/ubuntu-14.04"
   config.ssh.insert_key = false
   config.ssh.forward_agent = true
   config.vm.provider :virtualbox do |vb, override|
@@ -46,7 +46,7 @@ cluster.vm.define "node-2" do |config|
 end
 
 cluster.vm.define "node-3" do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "bento/ubuntu-14.04"
   config.ssh.insert_key = false
   config.vm.provider :virtualbox do |vb, override|
     vb.customize ["modifyvm", :id, "--memory", "512"]
@@ -57,7 +57,7 @@ cluster.vm.define "node-3" do |config|
 end
 
 cluster.vm.define "node-4" do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "bento/ubuntu-14.04"
   config.ssh.insert_key = false
   config.vm.provider :virtualbox do |vb, override|
     vb.customize ["modifyvm", :id, "--memory", "512"]
@@ -68,7 +68,7 @@ cluster.vm.define "node-4" do |config|
 end
 
 cluster.vm.define "node-5" do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "bento/ubuntu-14.04"
   config.ssh.insert_key = false
   config.vm.provider :virtualbox do |vb, override|
     vb.customize ["modifyvm", :id, "--memory", "512"]
