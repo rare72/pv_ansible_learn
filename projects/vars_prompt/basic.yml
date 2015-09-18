@@ -4,13 +4,13 @@
   connection: local
 
   vars:
-    dynamicpv_1: This should work.
+    dynamicpv_1: This Test Should Work.
     register: dynamicpvOutput_1
 
   vars_prompt:
     - name: dynamicpv_2
       prompt: "Enter a value"
-      private: yes
+      private: no
       register: dynamicpvOutput_2
   tasks:
    - debug: msg="{{ dynamicpv_1 }}. {{ dynamicpv_2 }} . Yes It Works!!!"
