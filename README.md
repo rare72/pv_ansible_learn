@@ -9,4 +9,6 @@ Vital Data: vital_data [Supports the running and usage of created playbooks]
 
 
 Notes:
--
+- .gitignore
+- .gitattributes
+- Vagrantfile
